@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import axios from 'axios'
+import Confetti from 'react-confetti';
 
 export default function UploadImage() {
     const [state, setState] = useState({
         selectedImage: null,
         imageAsFile: null,
+        submitted: false,
     })
 
     // console.log('selectedFile', selectedFile)
@@ -35,6 +37,7 @@ export default function UploadImage() {
             })
             .then((res) => {
                 document.querySelector("input[type='file']").value = "";
+                state.submitted(true);
             })
             .catch((err) => {
                 console.log(err);
@@ -67,6 +70,17 @@ export default function UploadImage() {
                 >
                     Upload Image
                 </button>
+                {state.submitted && (
+                  <Confetti
+                    width={window.innerWidth}
+                    height={window.innerHeight}
+                    numberOfPieces={100}
+                    recycle={false}
+                    gravity={0.5}
+                    friction={0.1}
+                    colors={['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5', '#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4caf50', '#8bc34a', '#cddc39', '#ffeb3b', '#ffc107', '#ff9800', '#ff5722']}
+                  />
+                )}
             </form>
         </div>
     )
