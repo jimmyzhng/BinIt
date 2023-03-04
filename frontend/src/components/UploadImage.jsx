@@ -1,15 +1,26 @@
 import { useState, useEffect } from "react";
 import axios from 'axios'
 import Confetti from 'react-confetti';
+import { BsFillCameraFill } from 'react-icons/bs'
+
+document.body.style = 'background: #8da98b;';
 
 export default function UploadImage() {
     const [state, setState] = useState({
         selectedImage: null,
         imageAsFile: null,
         submitted: false,
+        imageResult: null
+
     })
 
+    // useEffect(() => {
+    //     document.querySelector("input[type='file']").value = ""
+    // }, [state.selectedImage])
+
     // console.log('selectedFile', selectedFile)
+
+    // green, black (landfill), yellow (clean paper), blue (recycle)
 
     const handleFileSelect = (event) => {
         // console.log(event.target.files[0])
@@ -36,6 +47,7 @@ export default function UploadImage() {
                 },
             })
             .then((res) => {
+                setState(prev => ({ ...prev, imageResult: res.data }))
                 document.querySelector("input[type='file']").value = "";
                 state.submitted(true);
             })
@@ -45,43 +57,52 @@ export default function UploadImage() {
     };
 
     return (
-        <div>
-            {state.selectedImage && (
-                <img
-                    className="profile-image"
-                    src={state.selectedImage}
-                    width="500"
-                    height="500"
-                />
-            )}
+        <div className="image-upload-cont">
+            <div className="image-with-buttons">
 
-            <form className="edit-form-upload" onSubmit={handleUpload}>
-                <input
-                    className="choose-image"
-                    type="file"
-                    name="image"
-                    onChange={handleFileSelect}
-                    accept="image/*"
-                />
-                <button
-                    className="profile-button upload"
-                    type="button"
-                    onClick={handleUpload}
-                >
-                    Upload Image
-                </button>
-                {state.submitted && (
-                  <Confetti
-                    width={window.innerWidth}
-                    height={window.innerHeight}
-                    numberOfPieces={100}
-                    recycle={false}
-                    gravity={0.5}
-                    friction={0.1}
-                    colors={['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5', '#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4caf50', '#8bc34a', '#cddc39', '#ffeb3b', '#ffc107', '#ff9800', '#ff5722']}
-                  />
-                )}
-            </form>
+                <div className="image-cont">
+                    {state.selectedImage && (
+                        <img
+                            className="uploaded-image"
+                            src={state.selectedImage}
+                        />
+                    )}
+                </div>
+
+                <form className="edit-form-upload" onSubmit={handleUpload}>
+                    <label className="upload-label" for="inputTag">
+                        <BsFillCameraFill />
+                        <input
+                            id="inputTag"
+                            className="choose-image"
+                            type="file"
+                            name="image"
+                            onChange={handleFileSelect}
+                            accept="image/*"
+                        />
+                    </label>
+                    <button
+                        className="upload-image"
+                        type="button"
+                        onClick={handleUpload}
+                    >
+                        Upload Image
+                    </button>
+                    {state.submitted && (
+                        <Confetti
+                            width={window.innerWidth}
+                            height={window.innerHeight}
+                            numberOfPieces={100}
+                            recycle={false}
+                            gravity={0.5}
+                            friction={0.1}
+                            colors={['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5', '#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4caf50', '#8bc34a', '#cddc39', '#ffeb3b', '#ffc107', '#ff9800', '#ff5722']}
+                        />
+                    )}
+                </form>
+
+            </div>
+
         </div>
     )
 }
