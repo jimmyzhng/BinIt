@@ -58,6 +58,17 @@ export default function UploadImage() {
 
     return (
         <div className="image-upload-cont">
+
+            <div className={`upload-info ${imageResult}`}>
+                {state.imageResult ? (
+                    state.imageResult === "blue" ? "Recycling" :
+                        state.imageResult === "green" ? "Compost" :
+                            state.imageResult === "black" ? "Landfill" :
+                                state.imageResult === "yellow" ? "Paper" :
+                                    null
+                ) : "Welcome to BinIt!"}
+            </div>
+
             <div className="image-with-buttons">
 
                 <div className="image-cont">

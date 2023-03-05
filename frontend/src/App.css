@@ -1,8 +1,21 @@
 .image-upload-cont {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 50px;
+    padding: 30px;
+}
+
+.upload-info {
+    display: flex;
+    justify-content: center;
+    background-color: #b8c9b2;
+    color: #fff;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 30%;
+
 }
 
 .image-cont {
@@ -82,4 +95,22 @@ label {
 
 input[type='file'] {
     color: transparent;
+}
+
+.green {
+    background-color: #394d3d;
+}
+
+.black {
+    background-color: #666d66;
+
+}
+
+.yellow {
+    background-color: #F1E5A4;
+}
+
+.blue {
+    background-color: #AEBFD2;
+
 }
