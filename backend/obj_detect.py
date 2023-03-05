@@ -3,29 +3,31 @@ from PIL import Image
 import torch
 import cv2
 
-listoftrash = ["broccoli", "wooden spoon", "band aid", 
-            "plastic bag", "toilet tissue, toilet paper, bathroom tissue", 
-            "paper towel", "diaper, nappy, napkin", "beer bottle", "cup"]
-
-bin_sort = {
-    "broccoli" : "green", 
-    "wooden spoon" : "green", 
-    "band aid" : "black", 
-    "plastic bag" : "black",
-    "toilet tissue, toilet paper, bathroom tissue" : "yellow", 
-    "paper towel" : "yellow",
-    "diaper, nappy, napkin" : "black",
-    "beer bottle" : "blue",
-    "cup" : "green"
-}
-
-ResNetWeights=models.ResNet152_Weights.IMAGENET1K_V2
-model = models.resnet152(weights=ResNetWeights)
-
-with open('imagenet_classes.txt') as f:
-    classes = [line.strip() for line in f.readlines()]
-
 def trash_detect(img):
+
+    listoftrash = ["broccoli", "wooden spoon", "band aid", 
+                "plastic bag", "toilet tissue, toilet paper, bathroom tissue", 
+                "paper towel", "diaper, nappy, napkin", "beer bottle", "cup"]
+
+    bin_sort = {
+        "broccoli" : "green", 
+        "wooden spoon" : "green", 
+        "band aid" : "black", 
+        "plastic bag" : "black",
+        "toilet tissue, toilet paper, bathroom tissue" : "yellow", 
+        "paper towel" : "yellow",
+        "diaper, nappy, napkin" : "black",
+        "beer bottle" : "blue",
+        "cup" : "green"
+    }
+
+    ResNetWeights=models.ResNet152_Weights.IMAGENET1K_V2
+    model = models.resnet152(weights=ResNetWeights)
+
+    with open('backend/imagenet_classes.txt') as f:
+        classes = [line.strip() for line in f.readlines()]
+
+    img = cv2.imread(img)
     img = cv2.resize(img, (256,256))
     pill_img = Image.fromarray(img)
 

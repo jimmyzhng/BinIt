@@ -26,27 +26,34 @@ export default function UploadImage() {
     const handleUpload = (event) => {
         event.preventDefault();
 
-        const imageData = new FormData();
-        imageData.append(
-            "file_data",
-            state.pictureAsFile
-        );
+        const reader = new FileReader();
+        reader.readAsDataURL(state.imageAsFile)
 
-        axios
-            .post("http://127.0.0.1:5000/", imageData, {
-                headers: {
-                    "Content-Type": "multipart/form-data",
-                },
-            })
-            .then((res) => {
-                console.log('res', res)
-                setState(prev => ({ ...prev, imageResult: res.data }))
-                document.querySelector("input[type='file']").value = "";
-                state.submitted(true);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
+        reader.onload = () => {
+            const base64Image = reader.result;
+
+            axios
+                .post("http://127.0.0.1:5000/", 
+                JSON.stringify(base64Image)
+                , {
+                    headers: {
+                        "Content-Type": "application/json; charset=UTF-8",
+                    },
+                })
+                .then((res) => {
+                    console.log('res', res)
+                    setState(prev => ({ ...prev, imageResult: res.data }))
+                    document.querySelector("input[type='file']").value = "";
+                    state.submitted(true);
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+
+
+        }
+
+
     };
 
     return (
