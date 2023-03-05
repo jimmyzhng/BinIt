@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from 'axios'
-import Confetti from 'react-confetti';
+import ConfettiExplosion from 'react-confetti-explosion';
 import { BsFillCameraFill } from 'react-icons/bs'
 
 document.body.style = 'background: #8da98b;';
@@ -9,9 +9,7 @@ export default function UploadImage() {
     const [state, setState] = useState({
         selectedImage: null,
         imageAsFile: null,
-        submitted: false,
         imageResult: null
-
     })
 
     // useEffect(() => {
@@ -59,6 +57,16 @@ export default function UploadImage() {
     return (
         <div className="image-upload-cont">
 
+            {state.imageResult && (
+                <ConfettiExplosion
+                    x={0}
+                    y={0}
+                    particleCount={500}
+                    blastOpacity={0.9}
+                    colors={['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5', '#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4caf50', '#8bc34a', '#cddc39', '#ffeb3b', '#ffc107', '#ff9800', '#ff5722']}
+                />
+            )}
+
             <div className={`upload-info ${state.imageResult}`}>
                 {state.imageResult ? (
                     state.imageResult === "blue" ? "Recycling" :
@@ -97,19 +105,8 @@ export default function UploadImage() {
                         type="button"
                         onClick={handleUpload}
                     >
-                        Upload Image
+                        Upload
                     </button>
-                    {state.submitted && (
-                        <Confetti
-                            width={window.innerWidth}
-                            height={window.innerHeight}
-                            numberOfPieces={100}
-                            recycle={false}
-                            gravity={0.5}
-                            friction={0.1}
-                            colors={['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5', '#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4caf50', '#8bc34a', '#cddc39', '#ffeb3b', '#ffc107', '#ff9800', '#ff5722']}
-                        />
-                    )}
                 </form>
 
             </div>
