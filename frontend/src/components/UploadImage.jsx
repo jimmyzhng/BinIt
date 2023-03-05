@@ -59,7 +59,7 @@ export default function UploadImage() {
     return (
         <div className="image-upload-cont">
 
-            <div className={`upload-info ${imageResult}`}>
+            <div className={`upload-info ${state.imageResult}`}>
                 {state.imageResult ? (
                     state.imageResult === "blue" ? "Recycling" :
                         state.imageResult === "green" ? "Compost" :
