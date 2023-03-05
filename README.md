@@ -22,13 +22,16 @@ git clone https://github.com/jimmyzhng/roothacks-project.git
 
 2. Install the front-end dependencies by running the following command in the `frontend` directory:
 ```console
-pip3 install node
+pip install node
 npm install
 ```
 
 3. Install the back-end dependencies by running the following command in the `backend` directory:
 ```console
 pip install flask
+pip install numpy
+pip install pytorch
+pip install opencv-python
 ```
 
 4. Start the front-end server by running the following command in the `frontend` directory:
@@ -38,6 +41,7 @@ npm start
 
 5. Start the back-end server by running the following command in the `backend` directory:
 ```console
+source venv/bin/activate
 python app.py
 ```
 
