@@ -9,7 +9,7 @@ export default function UploadImage() {
     const [state, setState] = useState({
         selectedImage: null,
         imageAsFile: null,
-        imageResult: null
+        imageResult: "green"
     })
 
     // useEffect(() => {
