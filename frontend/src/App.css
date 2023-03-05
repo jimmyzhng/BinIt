@@ -118,3 +118,12 @@ input[type='file'] {
     background-color: #AEBFD2;
 
 }
+
+.button:hover {
+    box-shadow: 0px 2.5px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.button:active {
+    box-shadow: 0px 1.25px 2.5px 0px rgba(0, 0, 0, 0.5);
+    transform: translateY(2px);
+}

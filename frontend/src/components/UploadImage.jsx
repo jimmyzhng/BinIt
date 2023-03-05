@@ -12,12 +12,6 @@ export default function UploadImage() {
         imageResult: null
     })
 
-    // useEffect(() => {
-    //     document.querySelector("input[type='file']").value = ""
-    // }, [state.selectedImage])
-
-    // console.log('selectedFile', selectedFile)
-
     // green, black (landfill), yellow (clean paper), blue (recycle)
 
     const handleFileSelect = (event) => {
@@ -39,12 +33,13 @@ export default function UploadImage() {
         );
 
         axios
-            .post("http://localhost:5000/", imageData, {
+            .post("http://127.0.0.1:5000/", imageData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                 },
             })
             .then((res) => {
+                console.log('res', res)
                 setState(prev => ({ ...prev, imageResult: res.data }))
                 document.querySelector("input[type='file']").value = "";
                 state.submitted(true);
@@ -89,8 +84,8 @@ export default function UploadImage() {
                 </div>
 
                 <form className="edit-form-upload" onSubmit={handleUpload}>
-                    <label className="upload-label" for="inputTag">
-                        <BsFillCameraFill />
+                    <label className="button upload-label" for="inputTag">
+                        Select Image
                         <input
                             id="inputTag"
                             className="choose-image"
@@ -101,11 +96,11 @@ export default function UploadImage() {
                         />
                     </label>
                     <button
-                        className="upload-image"
+                        className="button upload-image"
                         type="button"
                         onClick={handleUpload}
                     >
-                        Upload
+                        Upload Image
                     </button>
                 </form>
 
