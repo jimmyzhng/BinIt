@@ -1,3 +1,5 @@
+🏆 Winner of RootHacks 2023 "WiCS Women in Tech Award - Best project with at least one women-identifying or non-binary student on their team" 🏆
+
 # BinIt!
 
 BinIt is a web application that uses artificial intelligence (AI) to sort trash based on images. Users can take a photo of their trash using their device's camera and upload it onto our website. Then, BinIt will use computer vision and machine learning algorithms to identify the type of waste and suggest the correct bin to put it in.
