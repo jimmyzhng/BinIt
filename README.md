@@ -13,6 +13,10 @@ BinIt currently supports sorting of recyclable materials like plastics, glass, a
 - Backend Flask API to handle image recognition and bin recommendations
 - TensorFlow and Keras-based AI model for accurate image recognition
 
+## Demo
+
+![Demo](frontend/public/binit-gif-demo.gif)
+
 ## Installation
 
 To install and run BinIt, you'll need to follow these steps:
