@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from 'axios'
 import ConfettiExplosion from 'react-confetti-explosion';
-import { BsFillCameraFill } from 'react-icons/bs'
+import { BsFillCameraFill, BsCloudUploadFill, BsFillTrash3Fill } from 'react-icons/bs'
 
 document.body.style = 'background: #8da98b;';
 
@@ -9,7 +9,7 @@ export default function UploadImage() {
     const [state, setState] = useState({
         selectedImage: null,
         imageAsFile: null,
-        imageResult: null
+        imageResult: null,
     })
 
     // green, black (landfill), yellow (clean paper), blue (recycle)
@@ -76,7 +76,12 @@ export default function UploadImage() {
                             state.imageResult === "black" ? "Landfill" :
                                 state.imageResult === "yellow" ? "Paper" :
                                     null
-                ) : "Welcome to BinIt!"}
+                ) : (
+                <>
+                  <BsFillTrash3Fill size={30} style={{ marginRight: '10px' }} /> 
+                  {'BinIt!'}
+                </>
+                )}
             </div>
 
             <div className="image-with-buttons">
@@ -92,7 +97,7 @@ export default function UploadImage() {
 
                 <form className="edit-form-upload" onSubmit={handleUpload}>
                     <label className="button upload-label" for="inputTag">
-                        Select Image
+                        <BsFillCameraFill size={40}/>
                         <input
                             id="inputTag"
                             className="choose-image"
@@ -107,7 +112,7 @@ export default function UploadImage() {
                         type="button"
                         onClick={handleUpload}
                     >
-                        Upload Image
+                        <BsCloudUploadFill size={40}/>
                     </button>
                 </form>
 
