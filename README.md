@@ -10,7 +10,6 @@ BinIt currently supports sorting of recyclable materials like plastics, glass, a
 
 - User-friendly interface for taking and uploading photos
 - Real-time feedback on the type of trash and bin recommendations
-- Gamification elements like leaderboards and rewards for frequent use
 - Backend Flask API to handle image recognition and bin recommendations
 - TensorFlow and Keras-based AI model for accurate image recognition
 
@@ -57,7 +56,7 @@ python app.py
 To use BinIt, follow these steps:
 
 1. Open the BinIt application in your web browser.
-2. Click the "Take a Photo" button to open your device's camera.
-3. Take a photo of the item you want to sort.
-4. BinIt will automatically recognize the item and suggest the correct bin to put it in.
+2. Click the "Select Photo" button, and choose an image of your choice.
+3. When clicked, a preview of your image will show up on our application.
+4. When you click upload image, BinIt will automatically recognize the item and suggest the correct bin to put it in.
 5. Repeat the process for additional items.
