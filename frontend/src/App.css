@@ -110,19 +110,23 @@ input[type='file'] {
 
 .green {
     background-color: #b7f7c4;
+    color: #394d3d;
 }
 
 .black {
     background-color: #666d66;
+    color: white;
 
 }
 
 .yellow {
     background-color: #F1E5A4;
+    color: #394d3d;
 }
 
 .blue {
     background-color: #AEBFD2;
+    color: #394d3d;
 
 }
 
