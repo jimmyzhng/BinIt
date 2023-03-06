@@ -71,10 +71,10 @@ export default function UploadImage() {
 
             <div className={`upload-info ${state.imageResult}`}>
                 {state.imageResult ? (
-                    state.imageResult === "blue" ? "Recycling" :
-                        state.imageResult === "green" ? "Compost" :
-                            state.imageResult === "black" ? "Landfill" :
-                                state.imageResult === "yellow" ? "Paper" :
+                    state.imageResult === "blue" ? "RECYCLABLE" :
+                        state.imageResult === "green" ? "COMPOSTABLE" :
+                            state.imageResult === "black" ? "LANDFILL" :
+                                state.imageResult === "yellow" ? "PAPER" :
                                     null
                 ) : (
                 <>
