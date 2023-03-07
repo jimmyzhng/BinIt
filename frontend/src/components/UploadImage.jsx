@@ -66,7 +66,7 @@ export default function UploadImage() {
     return (
         <div className="image-upload-cont">
 
-            {state.imageResult && (
+            {state.imageResult && state.imageResult !== "black" && (
                 <ConfettiExplosion
                     x={0}
                     y={0}
