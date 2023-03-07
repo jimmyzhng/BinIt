@@ -1,5 +1,6 @@
 * {
-    font-family: "Poppins"
+    font-family: "Poppins";
+    font-size: 30px;
 }
 
 .image-upload-cont {
@@ -13,13 +14,13 @@
 .upload-info {
     display: flex;
     justify-content: center;
+    align-items: center;
     background-color: #b8c9b2;
-    color: #fff;
+    color: #394d3d;
     border-radius: 20px;
     padding: 10px;
     margin-bottom: 10px;
     width: 30%;
-
 }
 
 .image-cont {
@@ -31,7 +32,11 @@
     height: 403.2px;
     margin: 15px;
     border-radius: 20px;
+}
 
+.image-cont svg {
+  width: 70%;
+  height: 70%;
 }
 
 .image-with-buttons {
@@ -54,21 +59,22 @@
     border: 2px solid #394d3d;
     background-color: #394d3d;
     color: white;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
 }
 
-.uploaded-image,
-.upload-image {
+.uploaded-image {
     border-radius: 20px;
 }
 
 .edit-form-upload {
-
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     padding-bottom: 15px;
-
+    width: 75%;
 }
 
 input {
@@ -86,12 +92,13 @@ input {
 
 label {
     cursor: pointer;
-    width: 116.39px;
-    height: 30px;
+    width: 70px;
+    height: 70px;
     background-color: #394d3d;
-    border-radius: 20px;
+    border-radius: 50%;
     color: white;
     margin: 10px;
+    margin-right: 40px;
     /* margin-bottom: 25px; */
 }
 
@@ -102,21 +109,24 @@ input[type='file'] {
 }
 
 .green {
-    background-color: #394d3d;
+    background-color: #b7f7c4;
+    color: #394d3d;
 }
 
 .black {
     background-color: #666d66;
+    color: white;
 
 }
 
 .yellow {
     background-color: #F1E5A4;
+    color: #394d3d;
 }
 
 .blue {
-    background-color: #AEBFD2;
-
+    background-color: #b7ddf7;
+    color: #394d3d;
 }
 
 .button:hover {
@@ -127,3 +137,20 @@ input[type='file'] {
     box-shadow: 0px 1.25px 2.5px 0px rgba(0, 0, 0, 0.5);
     transform: translateY(2px);
 }
+
+.image-with-buttons.recyclable {
+    background-color: #b7ddf7;
+  }
+  
+  .image-with-buttons.compostable {
+    background-color: #b7f7c4;
+  }
+  
+  .image-with-buttons.landfill {
+    background-color: #666d66;
+  }
+  
+  .image-with-buttons.paper {
+    background-color: #F1E5A4;
+  }
+  

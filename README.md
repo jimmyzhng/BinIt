@@ -15,7 +15,7 @@ BinIt currently supports sorting of recyclable materials like plastics, glass, a
 
 ## Demo
 
-![Demo](frontend/public/binit-gif-demo.gif)
+![Demo](frontend/public/BinIt!-Demo1.gif)
 
 ## Installation
 
