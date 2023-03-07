@@ -137,3 +137,20 @@ input[type='file'] {
     box-shadow: 0px 1.25px 2.5px 0px rgba(0, 0, 0, 0.5);
     transform: translateY(2px);
 }
+
+.image-with-buttons.recyclable {
+    background-color: #b7ddf7;
+  }
+  
+  .image-with-buttons.compostable {
+    background-color: #b7f7c4;
+  }
+  
+  .image-with-buttons.landfill {
+    background-color: #666d66;
+  }
+  
+  .image-with-buttons.paper {
+    background-color: #F1E5A4;
+  }
+  

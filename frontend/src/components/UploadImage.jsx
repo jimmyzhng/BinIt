@@ -5,6 +5,13 @@ import { BsFillCameraFill, BsCloudUploadFill, BsFillTrash3Fill } from 'react-ico
 
 document.body.style = 'background: #8da98b;';
 
+const classMapping = {
+    "blue": "recyclable",
+    "green": "compostable",
+    "black": "landfill",
+    "yellow": "paper"
+}
+
 export default function UploadImage() {
     const [state, setState] = useState({
         selectedImage: null,
@@ -84,7 +91,7 @@ export default function UploadImage() {
                 )}
             </div>
 
-            <div className="image-with-buttons">
+            <div className={`image-with-buttons ${classMapping[state.imageResult]}`}>
 
                 <div className="image-cont">
                     {state.selectedImage ? (
