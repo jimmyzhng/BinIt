@@ -2,14 +2,14 @@
 
 # BinIt!
 
-BinIt is a web application that uses artificial intelligence (AI) to sort trash based on images. Users can take a photo of their trash using their device's camera and upload it onto our website. Then, BinIt will use computer vision and machine learning algorithms to identify the type of waste and suggest the correct bin to put it in.
+BinIt is a web application that uses artificial intelligence (AI) to sort waste based on images. Users can take a photo of their waste using their device's camera and upload it onto our website. Then, BinIt will use computer vision and machine learning algorithms to identify the type of waste and suggest the correct bin for disposal.
 
 ## Features
 
 BinIt currently supports sorting of recyclable materials like plastics, glass, and metals, as well as non-recyclable waste like food scraps or paper. The application also includes the following features:
 
 - User-friendly interface for taking and uploading photos
-- Real-time feedback on the type of trash and bin recommendations
+- Real-time feedback on the type of waste and bin recommendations
 - Backend Flask API to handle image recognition and bin recommendations
 - TensorFlow and Keras-based AI model for accurate image recognition
 
