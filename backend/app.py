@@ -27,7 +27,7 @@ bin_sort = {
 ResNetWeights = models.ResNet152_Weights.IMAGENET1K_V2
 model = models.resnet152(weights=ResNetWeights)
 
-with open('backend/imagenet_classes.txt') as f:
+with open('./backend/imagenet_classes.txt') as f:
     classes = [line.strip() for line in f.readlines()]
 
 @app.route("/", methods=["GET", "POST"])
